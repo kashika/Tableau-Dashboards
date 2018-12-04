@@ -7,7 +7,7 @@ import Create from "./components/create.component";
 import Edit from "./components/edit.component";
 import Index from "./components/index.component";
 import Search from "./components/search.component";
-
+import Connectivity from "./components/connectivity.component";
 
 class App extends Component {
   render() {
@@ -15,19 +15,12 @@ class App extends Component {
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to={"/"} className="navbar-brand">
-              IoT Sensors
-            </Link>
+              <a href="http://localhost:3000/sidebar" >&laquo;back</a>
             <div
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
-                  <Link to={"/"} className="nav-link">
-                    Home
-                  </Link>
-                </li>
                 <li className="nav-item">
                   <Link to={"/create"} className="nav-link">
                     Create
@@ -35,7 +28,7 @@ class App extends Component {
                 </li>
                 <li className="nav-item">
                   <Link to={"/index"} className="nav-link">
-                    Index
+                    View
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -43,7 +36,13 @@ class App extends Component {
                     Search
                   </Link>
                 </li>
-              </ul>
+                <li className="nav-item">
+                    <Link to={"/connectivity"} className="nav-link">
+                        Connectivity Chart
+                    </Link>
+                </li>
+            </ul>
+                <h2 className="navbar-dark">IoT Data Manager</h2>
             </div>
           </nav>
           <Switch>
@@ -51,6 +50,7 @@ class App extends Component {
             <Route path="/edit/:id" component={Edit} />
             <Route path="/index" component={Index} />
             <Route path="/search" component={Search} />
+              <Route path="/connectivity" component={Connectivity} />
           </Switch>
         </div>
       </Router>

@@ -84,7 +84,7 @@ class RecordGridRow extends Component {
 
   deleteRecord() {
     axios
-      .get("http://localhost:4000/sensor/delete/" + this.props.item._id)
+      .get("http://localhost:4003/sensor/delete/" + this.props.item._id)
       .then(console.log("Deleted"))
       .catch(err => console.log(err));
     window.location.reload();
@@ -354,7 +354,7 @@ export default class Search extends Component {
     }
 
     axios
-      .get("http://localhost:4000/sensor/search" + pagination + query)
+      .get("http://localhost:4003/sensor/search" + pagination + query)
       .then(response => {
         this.setState({ Data: response.data, showResult: true });
         console.log(response.data);

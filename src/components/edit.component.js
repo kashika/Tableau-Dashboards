@@ -24,7 +24,7 @@ export default class Edit extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/sensor/edit/" + this.props.match.params.id)
+      .get("http://localhost:4003/sensor/edit/" + this.props.match.params.id)
       .then(response => {
         this.setState({
           clusterId: response.data.clusterId,
@@ -83,7 +83,7 @@ export default class Edit extends Component {
     };
     axios
       .post(
-        "http://localhost:4000/sensor/update/" + this.props.match.params.id,
+        "http://localhost:4003/sensor/update/" + this.props.match.params.id,
         obj
       )
       .then(res => console.log(res.data));

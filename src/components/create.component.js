@@ -63,7 +63,7 @@ export default class Create extends Component {
       sensorValue: this.state.sensorValue
     };
     axios
-      .post("http://localhost:4000/sensor/add", obj)
+      .post("http://localhost:4003/sensor/add", obj)
       .then(res => console.log(res.data));
 
     this.setState({
